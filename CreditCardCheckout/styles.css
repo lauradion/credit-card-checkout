@@ -1,0 +1,229 @@
+* {
+    font-family: 'Barlow', sans-serif;
+}
+
+body {
+    background-image: url("images/pastel.jpg");
+    background-position: center;
+    background-size:auto;
+    background-repeat: no-repeat;
+}
+
+/*main section*/
+
+.checkout-background {
+    background-color:azure;
+    color:black;
+    padding: 0px 30px;
+    position: relative;
+    height: 570px;
+    width: 800px;
+    top: 450px;
+    left: 860px;
+    border-radius: 20px;
+    box-shadow: 5px 20px 50px rgb(131, 111, 165);
+}
+/*title*/
+
+h1 {
+    font-family: 'Barlow', sans-serif;
+    font-style: italic;
+    padding: 20px 0px;
+    position: relative;
+    left: 8%;
+}
+
+/*payment options*/
+
+#payment-buttons {
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    left: 8%;
+    width: 80%;
+}
+
+.row {
+    display:inline-flexbox;
+}
+
+.column {
+    flex: 50%;
+}
+
+#credit-column {
+    padding: 10px;
+}
+
+#paypal-column {
+    padding: 10px;
+}
+
+.payment-text {
+    color: black;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.5rem;  
+    padding: 40px;
+    width: 80%;
+}
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -4px;
+    left: -1px;
+    position: relative;
+    background-color: white;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid lightgray;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -4px;
+    left: -1px;
+    position: relative;
+    background-color: rgb(131, 111, 165);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid lightgray;
+    }
+
+input[type='radio'] + label {
+    border: 3px solid;
+    border-color: rgb(116, 116, 116);
+    border-radius: 10px;
+    padding: 40px;
+}
+
+input[type='radio']:checked + label {
+    border: 4px ridge rgb(131, 111, 165);
+    font-weight: bold;
+}
+
+#credit {
+    margin-right: 20px;
+}
+
+#paypal {
+    margin-right: 20px;
+}
+
+/*Card Info*/
+
+.card-number-section {
+    padding: 5px 20px 15px;
+}
+
+.card-number {
+    background-color: azure;
+    background-image: url("images/visa.png");
+    background-position: 98%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-color: lightgray;
+    border-radius: 7px;
+    color:rgb(131, 111, 165);
+    font-family: 'Barlow', sans-serif;
+    margin: 0;
+    padding: 5px 355px 5px 5px;
+    position: relative;
+    left: 8%;
+}
+
+
+.card-number-label {
+    background-color: azure;
+    color: black;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    border-color: lightgray;
+    position: relative;
+    left: 8%;
+}
+
+::placeholder {
+    color:rgb(131, 111, 165);
+    
+}
+
+.card-holder-name, .expiration-date, .cvv {
+    background-color: azure;
+    border-color: lightgray;
+    border-radius: 7px;
+    
+}
+
+.card-holder-name {
+    background-image: url("images/person.png");
+    background-position: 99%;
+    background-repeat: no-repeat;
+    background-size: 1.5rem;
+    padding: 5px 355px 5px 5px;
+    position: relative;
+    left: 10%;
+    margin-bottom: 15px;
+}
+
+.expiration-date, .cvv {
+    padding: 10px 61px 10px 5px;
+}
+
+.expiration-date-holder, .cvv-number-holder {
+    position: relative;
+}
+
+.expiration-date {
+    background-image: url("images/calendar.png");
+    background-position: 95%;
+    background-repeat: no-repeat;
+    background-size: 1.3rem;
+}
+
+.cvv {
+    background-image: url("images/information.png");
+    background-position: 95%;
+    background-repeat: no-repeat;
+    background-size: 1.3rem;
+}
+
+#card-details-section {
+    display: inline-flexbox;
+    width: 80%;
+    position:relative;
+    left: 12%;
+}
+
+#expiration-date-column, #cvv-column {
+    flex: 50%
+}
+
+/*Save Payment*/
+
+.save-card {
+    position: relative;
+    left: 8%;
+    padding: 15px;
+}
+
+input[type=checkbox] {
+    accent-color: rgb(180, 154, 224);
+}
+
+.checkbox-text {
+    padding-left: 5px;
+}
+
+/*Purchase Button*/
+
+.btn {
+    position: relative;
+    left: 41%;
+    background-color: rgb(165, 141, 206);
+}
