@@ -7,6 +7,10 @@ body {
     background-position: center;
     background-size:auto;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20%;
 }
 
 /*main section*/
@@ -18,37 +22,35 @@ body {
     position: relative;
     height: 570px;
     width: 800px;
-    top: 450px;
-    left: 860px;
     border-radius: 20px;
     box-shadow: 5px 20px 50px rgb(131, 111, 165);
+    
 }
 /*title*/
 
 h1 {
+    color: rgb(131, 111, 165);
     font-family: 'Barlow', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-style: italic;
-    padding: 20px 0px;
+    padding: 20px 0px 10px;
     position: relative;
-    left: 8%;
+    left: 3%;
+    margin-bottom: 0;
 }
 
 /*payment options*/
 
-#payment-buttons {
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    left: 8%;
-    width: 80%;
+.checkout-container {
+    padding: 0% 7%;
 }
 
 .row {
-    display:inline-flexbox;
+    padding: 5px;
 }
 
-.column {
-    flex: 50%;
+.payment-buttons {
+    text-align: center;
 }
 
 #credit-column {
@@ -59,12 +61,22 @@ h1 {
     padding: 10px;
 }
 
+.payment-border {
+    padding: 20% 15% 10%;
+}
+
 .payment-text {
     color: black;
     font-family: 'Barlow', sans-serif;
-    font-size: 1.5rem;  
-    padding: 40px;
-    width: 80%;
+    font-size: clamp(0.9rem, 0.6698rem + 1.0233vw, 2rem);  
+    white-space: nowrap;
+}
+
+input[type='radio'] { /*position of radio button*/
+    display: inline-block;
+    position: absolute;
+    bottom: 70%;
+    left: 48%;
 }
 
 input[type='radio']:after {
@@ -81,7 +93,7 @@ input[type='radio']:after {
     border: 2px solid lightgray;
 }
 
-input[type='radio']:checked:after {
+input[type='radio']:checked:after { /*effects after radio is selected*/
     width: 15px;
     height: 15px;
     border-radius: 15px;
@@ -92,34 +104,30 @@ input[type='radio']:checked:after {
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 2px solid lightgray;
+    border: 3.5px solid lightgray;
     }
 
-input[type='radio'] + label {
+input[type='radio'] + .payment-border {
     border: 3px solid;
     border-color: rgb(116, 116, 116);
     border-radius: 10px;
-    padding: 40px;
 }
 
-input[type='radio']:checked + label {
-    border: 4px ridge rgb(131, 111, 165);
+input[type='radio']:checked + .payment-border {
+    border: 4px solid rgb(131, 111, 165);
     font-weight: bold;
 }
 
-#credit {
+#credit-radio {
     margin-right: 20px;
 }
 
-#paypal {
+#paypal-radio {
     margin-right: 20px;
 }
 
 /*Card Info*/
 
-.card-number-section {
-    padding: 5px 20px 15px;
-}
 
 .card-number {
     background-color: azure;
@@ -131,21 +139,23 @@ input[type='radio']:checked + label {
     border-radius: 7px;
     color:rgb(131, 111, 165);
     font-family: 'Barlow', sans-serif;
-    margin: 0;
-    padding: 5px 355px 5px 5px;
-    position: relative;
-    left: 8%;
+    width: 100%;
+    padding: 5px;
 }
 
+.card-number-section, .card-holder-name-section, #expiration-date, #cvv {
+    padding: 15px;
+    left: 7%;
+}
+
+label {
+    margin-bottom: 0px;
+}
 
 .card-number-label {
-    background-color: azure;
     color: black;
     font-family: 'Barlow', sans-serif;
     font-weight: 700;
-    border-color: lightgray;
-    position: relative;
-    left: 8%;
 }
 
 ::placeholder {
@@ -157,7 +167,6 @@ input[type='radio']:checked + label {
     background-color: azure;
     border-color: lightgray;
     border-radius: 7px;
-    
 }
 
 .card-holder-name {
@@ -165,50 +174,42 @@ input[type='radio']:checked + label {
     background-position: 99%;
     background-repeat: no-repeat;
     background-size: 1.5rem;
-    padding: 5px 355px 5px 5px;
-    position: relative;
-    left: 10%;
-    margin-bottom: 15px;
+    width: 100%;
+    padding: 5px;
 }
 
-.expiration-date, .cvv {
-    padding: 10px 61px 10px 5px;
+.expiration-col, .cvv-col {
+    padding: 0px;
 }
 
-.expiration-date-holder, .cvv-number-holder {
-    position: relative;
+.expiration-col {
+    margin-right: 16.5%;
 }
 
-.expiration-date {
+.expiration-date { /*inside the text box*/
     background-image: url("images/calendar.png");
     background-position: 95%;
     background-repeat: no-repeat;
     background-size: 1.3rem;
+    margin-right: 1px;
+    padding: 5px;
+    width: 100%;
 }
 
-.cvv {
+.cvv { /*inside the text box*/
     background-image: url("images/information.png");
     background-position: 95%;
     background-repeat: no-repeat;
     background-size: 1.3rem;
-}
-
-#card-details-section {
-    display: inline-flexbox;
-    width: 80%;
-    position:relative;
-    left: 12%;
-}
-
-#expiration-date-column, #cvv-column {
-    flex: 50%
+    padding: 5px;
+    width: 100%;
 }
 
 /*Save Payment*/
 
 .save-card {
     position: relative;
-    left: 8%;
+    left: 4%;
     padding: 15px;
 }
 
@@ -223,7 +224,179 @@ input[type=checkbox] {
 /*Purchase Button*/
 
 .btn {
-    position: relative;
-    left: 41%;
     background-color: rgb(165, 141, 206);
+}
+
+@media (min-width: 100px) and (max-width: 767px) { /*format for mobile*/
+    body {
+        padding: 50% 10%;
+    }
+
+    .checkout-background {
+        height: 475px;
+    }
+
+    input[type='radio'] { /*position of radio button*/
+        display: inline-block;
+        position: absolute;
+        bottom: 63%;
+        left: 40%;
+    }
+    .payment-border {
+        padding: 25px 2px 0px;
+    }
+
+    .payment-text {
+        font-size:0.8rem;
+    }
+
+    #credit-column {
+        padding: 2px;
+    }
+
+    #paypal-column {
+        padding: 2px;
+    }
+
+    .expiration-col {
+        margin: 0;
+    }
+
+    .card-info-container {
+        font-size: 0.8rem;
+    }
+
+    .card-number-label {
+        padding: 10px 5px 0px;
+    }
+
+    .card-number-row, .card-holder-name-row {
+        margin-bottom: 8px;
+    }
+
+    .expiration-col {
+        margin-bottom: 17px;
+    }
+
+    .checkbox-text {
+        font-size: 0.8rem;
+        margin-bottom: 50px;
+        position: relative;
+        top: -27%;
+    }
+
+    .btn {
+        position: relative;
+        left: 12%;
+        bottom: 50px;
+    }
+
+    input[type=checkbox] {
+        position: relative;
+        left: -12%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1040px) { /*format for ipad*/
+    
+    .checkout-background {
+        height: 40%;
+    }
+    
+    .card-info-container {
+        font-size: 0.9rem;
+    }
+
+    .card-number-label {
+        padding: 10px 5px 0px;
+    }
+
+    .card-number-row, .card-holder-name-row {
+        margin-bottom: 8px;
+    }
+
+    .expiration-col {
+        margin-bottom: 17px;
+        position: relative;
+    }
+
+    .expiration-date {
+        width: 112%;
+    }
+
+    .cvv-col {
+        position: relative;
+        right: 5%;
+    }
+
+    .cvv {
+        width: 112%;
+    }
+
+    input[type=checkbox] {
+        position: relative;
+        left: 34%;
+        bottom: 13.5%;
+    }
+    .checkbox-text {
+        font-size: 0.8rem;
+        margin-bottom: 50px;
+        position: relative;
+        bottom: 40%;
+        left: 47%;
+        white-space: nowrap;
+    }
+
+    .btn {
+        position: relative;
+        top: 35%;
+        right: 51%;
+    }
+}
+
+@media (min-width: 1040px) {
+
+    .expiration-col {
+        margin-bottom: 17px;
+        position: relative;
+    }
+
+    .expiration-date {
+        width: 112%;
+    }
+
+    .cvv-col {
+        position: relative;
+        right: 5%;
+    }
+
+    .cvv {
+        width: 112%;
+    }
+
+    input[type=checkbox] {
+        position: relative;
+        left: 54%;
+        top: 24%;
+    }
+    
+    .checkbox-text {
+        position: relative;
+        left: 56%;
+        top: 22%;
+    }
+    
+    .btn {
+        position: relative;
+        top: 170%;
+        right: 33%;
+    }   
+}
+
+@media (min-width: 1280px) {
+    .btn {
+        position: relative;
+        top: 150%;
+        right: 33%;
+    }   
 }
